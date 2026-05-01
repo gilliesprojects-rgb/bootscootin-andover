@@ -9,9 +9,13 @@ export default function Header() {
     <header className="bg-leather-dark text-white shadow-lg sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <a href="/" className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-full bg-brand-gold flex items-center justify-center text-2xl shadow-md">
-            <span aria-hidden>🥾</span>
-          </div>
+          <img
+            src="/logo.png"
+            alt="Boot Scootin' Andover logo"
+            width={56}
+            height={56}
+            className="w-14 h-14 rounded-full object-cover shadow-md ring-2 ring-brand-gold/60"
+          />
           <div>
             <h1 className="text-xl font-bold text-brand-cream tracking-wide">
               Boot Scootin&apos; Andover
