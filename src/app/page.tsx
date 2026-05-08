@@ -19,16 +19,23 @@ export default function Home() {
               Boot Scootin&apos; <span className="text-brand-gold">Andover</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-brand-light max-w-2xl mx-auto leading-relaxed">
-              Easy steps, big tunes, and a room full of friendly faces. Whether
-              you&apos;ve never danced a step or you&apos;ve worn out a pair of
-              boots already, we&apos;d love to see you on the floor.
+              This isn&apos;t just a dance class — it&apos;s a country community
+              in the making. Boot Scootin&apos; Andover is set up to put fun
+              first, with weekly lessons designed for all abilities and a
+              friendly, no-pressure atmosphere.
+            </p>
+            <p className="mt-4 text-lg md:text-xl text-brand-light max-w-2xl mx-auto leading-relaxed">
+              Every 8 weeks, we&apos;ll host a social event so you can show off
+              your new moves, meet like-minded folks, and enjoy a proper boot
+              scootin&apos; night out. Lessons, laughs, and line dancing —
+              that&apos;s what we&apos;re about.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/classes"
                 className="bg-brand-gold text-brand-dark px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition"
               >
-                See Classes
+                Book a Class
               </a>
               <a
                 href="/contact"
@@ -38,20 +45,6 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* TBC notice */}
-      <section className="bg-brand-gold/15 border-y border-brand-gold/40">
-        <div className="max-w-4xl mx-auto px-4 py-6 text-center">
-          <p className="text-brand-dark">
-            <span className="font-bold">Coming soon —</span> class times and
-            venue are being finalised.{" "}
-            <a href="/contact" className="underline font-semibold">
-              Drop us a message
-            </a>{" "}
-            to be the first to know when we kick off.
-          </p>
         </div>
       </section>
 
@@ -105,14 +98,13 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 py-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold">Ready to scoot?</h2>
           <p className="mt-4 text-brand-cream/90 max-w-xl mx-auto">
-            Pop your name on the list and we&apos;ll let you know the moment
-            our first session is locked in.
+            Grab a spot in the next class — book online and pay in seconds.
           </p>
           <a
-            href="/contact"
+            href="/classes"
             className="inline-block mt-8 bg-brand-gold text-brand-dark px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition"
           >
-            Save my spot
+            Book Now
           </a>
         </div>
       </section>
