@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Boot Scootin' Andover | Line Dancing in Andover, Hampshire",
   description:
     "A friendly line dancing class in Andover, Hampshire. Beginners and experienced dancers welcome — come for the boots, stay for the buzz.",
+  verification: {
+    google: "Skg0yVjS8pjBQamSHtdHDJ4fN35yp05L_4Bcdt8lY6I",
+  },
 };
 
 export default function RootLayout({
