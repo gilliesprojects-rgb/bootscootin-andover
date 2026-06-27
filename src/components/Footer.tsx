@@ -1,3 +1,5 @@
+import { venues, mailtoUrl, telUrl, whatsappUrl, business } from "@/lib/site";
+
 export default function Footer() {
   return (
     <footer className="bg-leather-dark text-brand-cream mt-auto">
@@ -8,6 +10,22 @@ export default function Footer() {
             <p className="text-sm text-brand-light leading-relaxed">
               Friendly line dancing in Andover, Hampshire. Easy steps, great
               music, no partner needed — just a pair of boots and a smile.
+            </p>
+            <p className="text-sm text-brand-light leading-relaxed mt-4 space-y-1">
+              <a href={mailtoUrl} className="block hover:text-brand-gold transition">
+                {business.email}
+              </a>
+              <a href={telUrl} className="block hover:text-brand-gold transition">
+                {business.phoneDisplay}
+              </a>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-brand-gold transition"
+              >
+                Message us on WhatsApp
+              </a>
             </p>
           </div>
           <div>
@@ -31,14 +49,18 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-brand-gold mb-3">Find Us</h3>
-            <p className="text-sm text-brand-light">
-              Andover, Hampshire
-              <br />
-              <span className="italic text-brand-light/80">
-                Venue to be confirmed
-              </span>
-            </p>
+            <h3 className="font-bold text-brand-gold mb-3">Where We Dance</h3>
+            <ul className="space-y-3 text-sm text-brand-light">
+              {venues.map((v) => (
+                <li key={v.id}>
+                  <span className="font-semibold text-brand-cream">{v.name}</span>
+                  <br />
+                  {v.locality}, {v.region} {v.postcode}
+                  <br />
+                  <span className="text-brand-light/80">{v.day}s</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className="border-t border-brand-medium mt-8 pt-4 text-center text-xs text-brand-light">

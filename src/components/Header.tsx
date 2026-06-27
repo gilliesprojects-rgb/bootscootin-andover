@@ -17,12 +17,12 @@ export default function Header() {
             className="w-14 h-14 rounded-full object-cover shadow-md ring-2 ring-brand-gold/60"
           />
           <div>
-            <h1 className="text-xl font-bold text-brand-cream tracking-wide">
+            <span className="block text-xl font-bold text-brand-cream tracking-wide">
               Boot Scootin&apos; Andover
-            </h1>
-            <p className="text-xs text-brand-light uppercase tracking-widest">
+            </span>
+            <span className="block text-xs text-brand-light uppercase tracking-widest">
               Line Dancing · Hampshire
-            </p>
+            </span>
           </div>
         </a>
 

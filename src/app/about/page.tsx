@@ -1,7 +1,8 @@
 export const metadata = {
-  title: "About | Boot Scootin' Andover",
+  title: "About",
   description:
-    "About Boot Scootin' Andover — a friendly line dancing class for all abilities in Andover, Hampshire.",
+    "About Boot Scootin' Andover — a friendly line dancing class for all abilities, held in Abbotts Ann and Enham near Andover, Hampshire.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
@@ -37,13 +38,19 @@ export default function AboutPage() {
             leave grinning.
           </p>
           <p>
-            We&apos;re still putting the final touches in place — confirming
-            the venue, the night, and the timings. If you&apos;d like to be
-            among the first to know when it all kicks off, head to our{" "}
-            <a href="/contact" className="text-brand-red font-semibold underline">
-              contact page
+            We run two friendly weekly classes near Andover: <strong>Mondays
+            at Abbotts Ann C of E Primary School</strong> and <strong>Thursdays
+            at The Landale Wilson Hall in Enham</strong>. Whether you&apos;re a
+            total beginner or an improver looking for your next dance, there&apos;s
+            a spot for you. See the{" "}
+            <a href="/classes" className="text-brand-red font-semibold underline">
+              classes &amp; times
             </a>{" "}
-            and drop us a quick message.
+            page for full details and to book, or{" "}
+            <a href="/contact" className="text-brand-red font-semibold underline">
+              get in touch
+            </a>{" "}
+            with any questions.
           </p>
         </div>
       </section>

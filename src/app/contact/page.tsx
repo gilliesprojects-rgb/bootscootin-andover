@@ -1,9 +1,11 @@
 import ContactForm from "./ContactForm";
+import { business, mailtoUrl, telUrl, whatsappUrl } from "@/lib/site";
 
 export const metadata = {
-  title: "Contact | Boot Scootin' Andover",
+  title: "Contact",
   description:
-    "Get in touch with Boot Scootin' Andover — register interest, ask a question, or be the first to know when classes start.",
+    "Get in touch with Boot Scootin' Andover — register interest, ask a question, or be the first to know about line dancing classes in Andover.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
@@ -26,6 +28,34 @@ export default function ContactPage() {
 
       <section className="py-16">
         <div className="max-w-2xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-brand-cream rounded-2xl p-5 text-center shadow-sm border border-brand-light/40 hover:border-brand-gold transition"
+            >
+              <div className="text-3xl mb-2" aria-hidden>💬</div>
+              <p className="font-semibold text-brand-dark">WhatsApp</p>
+              <p className="text-sm text-brand-medium">{business.phoneDisplay}</p>
+            </a>
+            <a
+              href={telUrl}
+              className="bg-brand-cream rounded-2xl p-5 text-center shadow-sm border border-brand-light/40 hover:border-brand-gold transition"
+            >
+              <div className="text-3xl mb-2" aria-hidden>📞</div>
+              <p className="font-semibold text-brand-dark">Call</p>
+              <p className="text-sm text-brand-medium">{business.phoneDisplay}</p>
+            </a>
+            <a
+              href={mailtoUrl}
+              className="bg-brand-cream rounded-2xl p-5 text-center shadow-sm border border-brand-light/40 hover:border-brand-gold transition"
+            >
+              <div className="text-3xl mb-2" aria-hidden>✉️</div>
+              <p className="font-semibold text-brand-dark">Email</p>
+              <p className="text-sm text-brand-medium break-all">{business.email}</p>
+            </a>
+          </div>
           <ContactForm />
         </div>
       </section>
