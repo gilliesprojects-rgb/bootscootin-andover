@@ -1,3 +1,5 @@
+import { towns, venuesForTown, formatTime } from "@/lib/site";
+
 export default function Home() {
   return (
     <>
@@ -7,22 +9,24 @@ export default function Home() {
           <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-gold/30">
             <img
               src="/hero.png"
-              alt="Boot Scootin' Andover line dance class logo"
+              alt="Boot Scootin' UK line dance class"
               className="w-full h-auto block"
             />
           </div>
           <div className="text-center mt-10">
             <p className="uppercase tracking-[0.4em] text-brand-gold text-sm mb-4">
-              Line Dancing · Andover · Hampshire
+              Line Dancing · Andover &amp; Salisbury
             </p>
             <h1 className="text-4xl md:text-6xl font-extrabold text-brand-cream leading-tight">
-              Boot Scootin&apos; <span className="text-brand-gold">Andover</span>
+              Boot Scootin&apos; <span className="text-brand-gold">UK</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-brand-light max-w-2xl mx-auto leading-relaxed">
               This isn&apos;t just a dance class — it&apos;s a country community
-              in the making. Boot Scootin&apos; Andover is set up to put fun
-              first, with weekly lessons designed for all abilities and a
-              friendly, no-pressure atmosphere.
+              in the making. Boot Scootin&apos; puts fun first, with weekly
+              lessons designed for all abilities and a friendly, no-pressure
+              atmosphere. We&apos;ve now got classes in both{" "}
+              <span className="text-brand-cream font-semibold">Andover</span> and{" "}
+              <span className="text-brand-cream font-semibold">Salisbury</span>.
             </p>
             <p className="mt-4 text-lg md:text-xl text-brand-light max-w-2xl mx-auto leading-relaxed">
               Every 8 weeks, we&apos;ll host a social event so you can show off
@@ -44,6 +48,59 @@ export default function Home() {
                 Get in Touch
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Where we dance — town sections */}
+      <section className="py-16 md:py-20 bg-brand-cream/50 border-b border-brand-light/40">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-brand-dark">
+            Where we dance
+          </h2>
+          <p className="text-center text-brand-medium mt-3 max-w-2xl mx-auto">
+            Two towns, one boot scootin&apos; family. Pick your nearest class —
+            you&apos;re welcome at any of them.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {towns.map((t) => (
+              <div
+                key={t.id}
+                className="bg-white rounded-2xl p-7 shadow-sm border border-brand-light/50 flex flex-col"
+              >
+                <p className="uppercase tracking-widest text-brand-gold text-xs font-semibold">
+                  {t.region}
+                </p>
+                <h3 className="text-2xl font-bold text-brand-dark mt-1">
+                  Boot Scootin&apos; {t.name}
+                </h3>
+                <p className="text-brand-medium mt-3 leading-relaxed">{t.blurb}</p>
+                <ul className="mt-5 space-y-2 text-brand-dark">
+                  {venuesForTown(t.id).map((v) => (
+                    <li key={v.id} className="flex items-start gap-2">
+                      <span aria-hidden className="mt-0.5">👢</span>
+                      <span>
+                        <span className="font-semibold">{v.day}s</span> —{" "}
+                        {v.name}
+                        <span className="block text-sm text-brand-medium">
+                          {v.sessions
+                            .map((s) => `${formatTime(s.start)}–${formatTime(s.end)}`)
+                            .join(" & ")}
+                          {v.price ? ` · ${v.price}` : ""}
+                        </span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="/classes"
+                  className="inline-block mt-6 self-start bg-brand-gold text-brand-dark px-5 py-2.5 rounded-lg font-semibold hover:bg-yellow-400 transition"
+                >
+                  See {t.name} classes
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>

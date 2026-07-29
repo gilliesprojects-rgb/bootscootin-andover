@@ -11,17 +11,17 @@ export default function Header() {
         <a href="/" className="flex items-center gap-3">
           <img
             src="/logo.png"
-            alt="Boot Scootin' Andover logo"
+            alt="Boot Scootin' UK logo"
             width={56}
-            height={56}
-            className="w-14 h-14 rounded-full object-cover shadow-md ring-2 ring-brand-gold/60"
+            height={60}
+            className="h-14 w-auto object-contain drop-shadow-md"
           />
           <div>
             <span className="block text-xl font-bold text-brand-cream tracking-wide">
-              Boot Scootin&apos; Andover
+              Boot Scootin&apos; UK
             </span>
             <span className="block text-xs text-brand-light uppercase tracking-widest">
-              Line Dancing · Hampshire
+              Line Dancing · Andover &amp; Salisbury
             </span>
           </div>
         </a>

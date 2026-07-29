@@ -1,7 +1,7 @@
 export const metadata = {
   title: "About",
   description:
-    "About Boot Scootin' Andover — a friendly line dancing class for all abilities, held in Abbotts Ann and Enham near Andover, Hampshire.",
+    "About Boot Scootin' UK — friendly line dancing classes for all abilities in Andover (Hampshire) and Salisbury (Wiltshire).",
   alternates: { canonical: "/about" },
 };
 
@@ -14,11 +14,12 @@ export default function AboutPage() {
             About
           </p>
           <h1 className="text-4xl md:text-5xl font-extrabold">
-            A new line dance class for Andover
+            Line dancing in Andover &amp; Salisbury
           </h1>
           <p className="mt-6 text-brand-light text-lg leading-relaxed">
-            Boot Scootin&apos; Andover is a brand new weekly line dancing
-            class, opening its doors in Andover, Hampshire.
+            Boot Scootin&apos; UK runs friendly weekly line dancing classes —
+            starting in Andover, Hampshire, and now dancing in Salisbury,
+            Wiltshire too.
           </p>
         </div>
       </section>
@@ -38,11 +39,14 @@ export default function AboutPage() {
             leave grinning.
           </p>
           <p>
-            We run two friendly weekly classes near Andover: <strong>Mondays
-            at Abbotts Ann C of E Primary School</strong> and <strong>Thursdays
-            at The Landale Wilson Hall in Enham</strong>. Whether you&apos;re a
-            total beginner or an improver looking for your next dance, there&apos;s
-            a spot for you. See the{" "}
+            What started as a single class in Andover has grown into a proper
+            boot scootin&apos; family across two counties. In{" "}
+            <strong>Andover</strong> we dance <strong>Mondays at Abbotts Ann C
+            of E Primary School</strong> and <strong>Thursdays at The Landale
+            Wilson Hall in Enham</strong>. Over in <strong>Salisbury</strong>,
+            you&apos;ll find us <strong>every Tuesday at Chafyn Grove
+            School</strong>. Whether you&apos;re a total beginner or an improver
+            looking for your next dance, there&apos;s a spot for you. See the{" "}
             <a href="/classes" className="text-brand-red font-semibold underline">
               classes &amp; times
             </a>{" "}

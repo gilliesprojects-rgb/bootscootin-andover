@@ -1,4 +1,4 @@
-import { venues, mailtoUrl, telUrl, whatsappUrl, business } from "@/lib/site";
+import { towns, venuesForTown, mailtoUrl, telUrl, whatsappUrl, business } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-bold text-brand-gold mb-3">Boot Scootin&apos; Andover</h3>
+            <h3 className="font-bold text-brand-gold mb-3">Boot Scootin&apos; UK</h3>
             <p className="text-sm text-brand-light leading-relaxed">
-              Friendly line dancing in Andover, Hampshire. Easy steps, great
+              Friendly line dancing in Andover and Salisbury. Easy steps, great
               music, no partner needed — just a pair of boots and a smile.
             </p>
             <p className="text-sm text-brand-light leading-relaxed mt-4 space-y-1">
@@ -50,21 +50,30 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="font-bold text-brand-gold mb-3">Where We Dance</h3>
-            <ul className="space-y-3 text-sm text-brand-light">
-              {venues.map((v) => (
-                <li key={v.id}>
-                  <span className="font-semibold text-brand-cream">{v.name}</span>
-                  <br />
-                  {v.locality}, {v.region} {v.postcode}
-                  <br />
-                  <span className="text-brand-light/80">{v.day}s</span>
-                </li>
+            <div className="space-y-4 text-sm text-brand-light">
+              {towns.map((t) => (
+                <div key={t.id}>
+                  <p className="uppercase tracking-widest text-brand-gold/90 text-xs font-semibold mb-1">
+                    {t.name}, {t.region}
+                  </p>
+                  <ul className="space-y-2">
+                    {venuesForTown(t.id).map((v) => (
+                      <li key={v.id}>
+                        <span className="font-semibold text-brand-cream">{v.name}</span>
+                        <br />
+                        {v.locality} {v.postcode}
+                        <br />
+                        <span className="text-brand-light/80">{v.day}s</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
         <div className="border-t border-brand-medium mt-8 pt-4 text-center text-xs text-brand-light">
-          &copy; {new Date().getFullYear()} Boot Scootin&apos; Andover. All rights reserved.
+          &copy; {new Date().getFullYear()} Boot Scootin&apos; UK. All rights reserved.
         </div>
       </div>
     </footer>

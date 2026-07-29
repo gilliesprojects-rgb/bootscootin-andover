@@ -14,18 +14,23 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Boot Scootin' Andover | Line Dancing in Andover, Hampshire",
-    template: "%s | Boot Scootin' Andover",
+    default: "Boot Scootin' UK | Line Dancing in Andover & Salisbury",
+    template: "%s | Boot Scootin' UK",
   },
   description: business.description,
   keywords: [
     "line dancing Andover",
     "line dance classes Andover",
     "line dancing Hampshire",
+    "line dancing Salisbury",
+    "line dance classes Salisbury",
+    "line dancing Wiltshire",
     "country dancing Andover",
+    "country dancing Salisbury",
     "beginner line dancing",
     "Abbotts Ann line dancing",
     "Enham line dancing",
+    "Chafyn Grove line dancing",
   ],
   alternates: {
     canonical: "/",
@@ -34,21 +39,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     url: SITE_URL,
-    siteName: "Boot Scootin' Andover",
-    title: "Boot Scootin' Andover | Line Dancing in Andover, Hampshire",
+    siteName: "Boot Scootin' UK",
+    title: "Boot Scootin' UK | Line Dancing in Andover & Salisbury",
     description: business.description,
     images: [
       {
         url: "/hero.png",
-        width: 1200,
-        height: 630,
-        alt: "Boot Scootin' Andover line dance class",
+        width: 1408,
+        height: 768,
+        alt: "Boot Scootin' UK line dance class",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boot Scootin' Andover | Line Dancing in Andover, Hampshire",
+    title: "Boot Scootin' UK | Line Dancing in Andover & Salisbury",
     description: business.description,
     images: ["/hero.png"],
   },
@@ -78,10 +83,10 @@ const localBusinessJsonLd = {
     addressRegion: "Hampshire",
     addressCountry: "GB",
   },
-  areaServed: {
-    "@type": "City",
-    name: "Andover",
-  },
+  areaServed: [
+    { "@type": "City", name: "Andover" },
+    { "@type": "City", name: "Salisbury" },
+  ],
   // The community halls where classes are held.
   location: venues.map((v) => ({
     "@type": "Place",

@@ -27,8 +27,8 @@ export default function ContactForm() {
     }
 
     data.append("access_key", accessKey);
-    data.append("subject", "New enquiry — Boot Scootin' Andover");
-    data.append("from_name", "Boot Scootin' Andover Website");
+    data.append("subject", "New enquiry — Boot Scootin' UK");
+    data.append("from_name", "Boot Scootin' UK Website");
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {

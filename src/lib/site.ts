@@ -4,15 +4,17 @@
 export const SITE_URL = "https://www.bootscootin.co.uk";
 
 export const business = {
-  name: "Boot Scootin' Andover",
-  tagline: "Line Dancing in Andover, Hampshire",
+  name: "Boot Scootin' UK",
+  // Used where the town/country suffix would be redundant.
+  shortName: "Boot Scootin'",
+  tagline: "Line Dancing in Andover & Salisbury",
   description:
-    "A friendly line dancing class in Andover, Hampshire. Beginners and experienced dancers welcome — no partner needed, just a pair of boots and a smile.",
+    "Friendly line dancing classes in Andover, Hampshire and Salisbury, Wiltshire. Beginners and experienced dancers welcome — no partner needed, just a pair of boots and a smile.",
   email: "bootscootinuk@gmail.com",
   // Display phone (UK national format) and the digits-only international form for tel:/wa.me links.
   phoneDisplay: "07717 844660",
   phoneIntl: "447717844660",
-  areaServed: "Andover, Hampshire",
+  areaServed: "Andover & Salisbury",
   priceRange: "££",
 } as const;
 
@@ -20,14 +22,47 @@ export const whatsappUrl = `https://wa.me/${business.phoneIntl}`;
 export const telUrl = `tel:+${business.phoneIntl}`;
 export const mailtoUrl = `mailto:${business.email}`;
 
+// A town where we run classes. Boot Scootin' UK is the umbrella brand; each town
+// is a branded section with its own venues and, where set up, its own booking calendar.
+export type Town = {
+  id: string; // slug, e.g. "andover"
+  name: string;
+  region: string; // county
+  blurb: string;
+  // Bookwhen calendar iframe for this town, if online booking is live.
+  bookingIframe?: string;
+};
+
+export const towns: Town[] = [
+  {
+    id: "andover",
+    name: "Andover",
+    region: "Hampshire",
+    blurb:
+      "Where it all started. Two friendly weekly classes across Andover — come along to whichever suits you best.",
+    bookingIframe: "https://bookwhen.com/bootscootin/iframe",
+  },
+  {
+    id: "salisbury",
+    name: "Salisbury",
+    region: "Wiltshire",
+    blurb:
+      "Our newest class — line dancing every Tuesday at Chafyn Grove School. All levels welcome, no partner needed.",
+    // TODO: swap in the Salisbury-specific Bookwhen calendar once confirmed.
+    bookingIframe: "https://bookwhen.com/bootscootin/iframe",
+  },
+];
+
 export type Venue = {
   id: string;
+  townId: Town["id"];
   name: string;
   streetAddress: string;
   locality: string; // town/village
   region: string; // county
   postcode: string;
   day: string; // e.g. "Monday"
+  price?: string; // e.g. "£7" — omit when handled inside Bookwhen
   // One or more class sessions held at this venue
   sessions: { start: string; end: string; label?: string }[];
 };
@@ -35,6 +70,7 @@ export type Venue = {
 export const venues: Venue[] = [
   {
     id: "abbotts-ann",
+    townId: "andover",
     name: "Abbotts Ann C of E Primary School",
     streetAddress: "Duck Street, Abbotts Ann",
     locality: "Andover",
@@ -48,6 +84,7 @@ export const venues: Venue[] = [
   },
   {
     id: "landale-wilson-hall",
+    townId: "andover",
     name: "The Landale Wilson Hall",
     streetAddress: "15 Newbury Road, Enham Alamein",
     locality: "Andover",
@@ -56,7 +93,24 @@ export const venues: Venue[] = [
     day: "Thursday",
     sessions: [{ start: "19:15", end: "20:15" }],
   },
+  {
+    id: "chafyn-grove",
+    townId: "salisbury",
+    name: "Chafyn Grove School",
+    streetAddress: "Manor Road",
+    locality: "Salisbury",
+    region: "Wiltshire",
+    postcode: "SP1 3PH",
+    day: "Tuesday",
+    price: "£7",
+    sessions: [{ start: "19:30", end: "20:30" }],
+  },
 ];
+
+// All venues for a given town, in listed order.
+export function venuesForTown(townId: Town["id"]): Venue[] {
+  return venues.filter((v) => v.townId === townId);
+}
 
 // "18:15" -> "6:15pm" for human-readable display.
 export function formatTime(t: string): string {

@@ -4,7 +4,7 @@ import { business, mailtoUrl, telUrl, whatsappUrl } from "@/lib/site";
 export const metadata = {
   title: "Contact",
   description:
-    "Get in touch with Boot Scootin' Andover — register interest, ask a question, or be the first to know about line dancing classes in Andover.",
+    "Get in touch with Boot Scootin' UK — ask a question or reserve a spot at our line dancing classes in Andover and Salisbury.",
   alternates: { canonical: "/contact" },
 };
 
