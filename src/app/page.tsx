@@ -1,4 +1,10 @@
-import { towns, venuesForTown, formatTime } from "@/lib/site";
+import {
+  towns,
+  venuesForTown,
+  formatTime,
+  merchUrl,
+  merchProducts,
+} from "@/lib/site";
 
 export default function Home() {
   return (
@@ -146,6 +152,69 @@ export default function Home() {
                 You&apos;ll know names by the end of week one.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Merch */}
+      <section className="py-16 md:py-20 bg-brand-cream/50 border-y border-brand-light/40">
+        <div className="max-w-6xl mx-auto px-4">
+          <p className="text-center uppercase tracking-[0.3em] text-brand-gold text-xs font-semibold">
+            Official Merch
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-brand-dark mt-3">
+            Wear your boots with pride
+          </h2>
+          <p className="text-center text-brand-medium mt-3 max-w-2xl mx-auto">
+            Boot Scootin&apos; tees — badge on the front, big boots-and-horseshoe
+            print on the back — printed for us by Hampshire T-Shirt Printing
+            Services in Andover. £15 each, in Andover and Salisbury designs.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+            {merchProducts.map((product) => (
+              <a
+                key={product.image}
+                href={merchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-brand-light/50 hover:shadow-md hover:border-brand-gold/60 transition"
+              >
+                <img
+                  src={product.image}
+                  alt={product.alt}
+                  width={900}
+                  height={900}
+                  loading="lazy"
+                  className="w-full h-auto block bg-white"
+                />
+                <div className="p-5 border-t border-brand-light/40">
+                  <p className="uppercase tracking-widest text-brand-gold text-xs font-semibold">
+                    {product.town}
+                  </p>
+                  <h3 className="text-lg font-bold text-brand-dark mt-1 group-hover:text-brand-medium transition">
+                    {product.name}
+                  </h3>
+                  <p className="text-brand-medium mt-1">{product.price}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <a
+              href={merchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-brand-gold text-brand-dark px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition"
+            >
+              Shop the Merch
+            </a>
+            <p className="text-sm text-brand-medium mt-4 max-w-xl mx-auto">
+              Opens our shop at Hampshire T-Shirt Printing Services — choose
+              Andover or Salisbury, then pick your size and colour. Orders take
+              7–10 working days.
+            </p>
           </div>
         </div>
       </section>

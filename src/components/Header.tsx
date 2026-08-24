@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { merchUrl } from "@/lib/site";
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -37,6 +39,14 @@ export default function Header() {
             Classes
           </a>
           <a
+            href={merchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-cream hover:text-brand-gold transition"
+          >
+            Merch
+          </a>
+          <a
             href="/contact"
             className="bg-brand-gold text-brand-dark px-4 py-2 rounded-lg font-semibold hover:bg-yellow-400 transition"
           >
@@ -69,6 +79,15 @@ export default function Header() {
           </a>
           <a href="/classes" className="text-brand-cream hover:text-brand-gold py-2" onClick={() => setMenuOpen(false)}>
             Classes
+          </a>
+          <a
+            href={merchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-cream hover:text-brand-gold py-2"
+            onClick={() => setMenuOpen(false)}
+          >
+            Merch
           </a>
           <a
             href="/contact"

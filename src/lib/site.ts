@@ -22,6 +22,37 @@ export const whatsappUrl = `https://wa.me/${business.phoneIntl}`;
 export const telUrl = `tel:+${business.phoneIntl}`;
 export const mailtoUrl = `mailto:${business.email}`;
 
+// Official merch store. Our printers (Hampshire T-Shirt Printing Services, Andover)
+// host a landing page built for us, with separate Andover and Salisbury collections.
+export const merchUrl =
+  "https://hampshiretshirts.co.uk/pages/boot-scootin-merchandise";
+
+// A few tees to show on the homepage. The shop is the source of truth for the
+// full range, sizes and stock — these are just the shopfront window.
+export const merchProducts = [
+  {
+    name: "Men's Softstyle T-Shirt",
+    town: "Andover",
+    price: "\u00a315",
+    image: "/merch/tee-mens-andover.jpg",
+    alt: "Black Boot Scootin' Andover t-shirt with cowboy boots and horseshoe back print",
+  },
+  {
+    name: "Women's Softstyle T-Shirt",
+    town: "Andover",
+    price: "\u00a315",
+    image: "/merch/tee-womens-andover.jpg",
+    alt: "Cream Boot Scootin' Andover women's t-shirt with cowboy boots and horseshoe back print",
+  },
+  {
+    name: "Women's V-Neck T-Shirt",
+    town: "Salisbury",
+    price: "\u00a315",
+    image: "/merch/tee-vneck-salisbury.jpg",
+    alt: "White Boot Scootin' Salisbury women's v-neck t-shirt with cowboy boots and horseshoe back print",
+  },
+] as const;
+
 // A town where we run classes. Boot Scootin' UK is the umbrella brand; each town
 // is a branded section with its own venues and, where set up, its own booking calendar.
 export type Town = {

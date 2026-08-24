@@ -1,4 +1,4 @@
-import { towns, venuesForTown, mailtoUrl, telUrl, whatsappUrl, business } from "@/lib/site";
+import { towns, venuesForTown, mailtoUrl, merchUrl, telUrl, whatsappUrl, business } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -39,6 +39,16 @@ export default function Footer() {
               <li>
                 <a href="/classes" className="hover:text-brand-gold transition">
                   Classes &amp; Times
+                </a>
+              </li>
+              <li>
+                <a
+                  href={merchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-gold transition"
+                >
+                  Merch Shop
                 </a>
               </li>
               <li>
