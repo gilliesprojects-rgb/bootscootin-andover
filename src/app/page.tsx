@@ -21,7 +21,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-10">
             <p className="uppercase tracking-[0.4em] text-brand-gold text-sm mb-4">
-              Line Dancing · Andover &amp; Salisbury
+              Line Dance Classes · Andover &amp; Salisbury
             </p>
             <h1 className="text-4xl md:text-6xl font-extrabold text-brand-cream leading-tight">
               Boot Scootin&apos; <span className="text-brand-gold">UK</span>
