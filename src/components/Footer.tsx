@@ -83,7 +83,9 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-brand-medium mt-8 pt-4 text-center text-xs text-brand-light">
-          &copy; {new Date().getFullYear()} Boot Scootin&apos; UK. All rights reserved.
+          &copy; {new Date().getFullYear()}{" "}Boot Scootin&apos; UK. All rights reserved.
+          <br />
+          Trading as Boot Scootin&apos; UK since May 2026.
         </div>
       </div>
     </footer>

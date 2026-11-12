@@ -23,7 +23,7 @@ export default function Header() {
               Boot Scootin&apos; UK
             </span>
             <span className="block text-xs text-brand-light uppercase tracking-widest">
-              Line Dancing · Andover &amp; Salisbury
+              Line Dance Classes · Andover &amp; Salisbury
             </span>
           </div>
         </a>
