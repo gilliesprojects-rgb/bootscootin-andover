@@ -14,7 +14,7 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto px-4 py-12 md:py-20">
           <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-gold/30">
             <img
-              src="/hero.png"
+              src="/hero-2026.png"
               alt="Boot Scootin' UK line dance class"
               className="w-full h-auto block"
             />

@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     description: business.description,
     images: [
       {
-        url: "/hero.png",
+        url: "/hero-2026.png",
         width: 1408,
         height: 768,
         alt: "Boot Scootin' UK line dance class",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Boot Scootin' UK | Line Dancing in Andover & Salisbury",
     description: business.description,
-    images: ["/hero.png"],
+    images: ["/hero-2026.png"],
   },
   verification: {
     google: "Skg0yVjS8pjBQamSHtdHDJ4fN35yp05L_4Bcdt8lY6I",
@@ -73,7 +73,7 @@ const localBusinessJsonLd = {
   url: SITE_URL,
   email: business.email,
   telephone: `+${business.phoneIntl}`,
-  image: `${SITE_URL}/hero.png`,
+  image: `${SITE_URL}/hero-2026.png`,
   logo: `${SITE_URL}/logo.png`,
   priceRange: business.priceRange,
   knowsAbout: ["Line dancing", "Country dancing", "Western dance"],
